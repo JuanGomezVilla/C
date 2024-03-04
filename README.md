@@ -20,3 +20,36 @@
     run filename.c
     ```
     > El programa compilará el código y luego lo ejecutará
+
+
+## Alternativas de string.h
+- Alternativa para _strcpy_:
+    ```c
+    void copiarString(char *punteroString, char *punteroValor){
+        while(*punteroValor != '\0'){
+            *punteroString = *punteroValor;
+            punteroString++;
+            punteroValor++;
+        }
+        *punteroString = '\0';
+    }
+
+    //...
+
+    copiarString(persona1.nombre, "Fulanito");
+    ```
+- Alternativa para _strcmp_:
+    ```c
+    int compararStrings(char *punteroString1, char *punteroString2){
+        while(*punteroString1 != '\0' || *punteroString2 != '\0'){
+            if(*punteroString1 != *punteroString2) return 0;
+            punteroString1++;
+            punteroString2++;
+        }
+        return 1;   
+    }
+
+    //...
+    
+    if(compararStrings(persona1.nombre, "Fulanito")) printf("Los nombres coinciden\n");
+    ```

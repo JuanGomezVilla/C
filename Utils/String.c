@@ -43,11 +43,42 @@ int compararStrings(char *punteroString1, char *punteroString2){
 struct Persona {
     char nombre[10];
     int edad;
+    char poblacion[10];
 };
 
+char* splitString(char *valor, char* separador){
+    char* contenidoDevolver = "juna";
+    while(*valor != *separador){
+        *contenidoDevolver = *valor;
+
+        contenidoDevolver++;
+        valor++;
+    }
+    return contenidoDevolver;
+}
+
 void main(){
-    //Personas
     struct Persona persona1;
+
+    char parametros[] = "juan,99,andel";
+    int ordenParametros = 0;
+
+    char *trozo = splitString(parametros, ",");
+    printf("TROZO: %s\n", trozo);
+    while(trozo != NULL){
+
+        if(ordenParametros == 0) copiarString(persona1.nombre, trozo);
+        else if(ordenParametros == 1) persona1.edad = 99;
+        else if(ordenParametros == 2) copiarString(persona1.nombre, trozo);
+
+        trozo = splitString(NULL, ",");
+        ordenParametros++;
+    }
+
+
+    return;
+
+    //Personas
     struct Persona persona2;
 
     //Datos de la persona 2
@@ -59,8 +90,8 @@ void main(){
     persona2.edad = 0;
 
     //Resultados
-    printf("NOMBRE: %s, EDAD: %i\n", persona1.nombre, persona1.edad);
-    printf("NOMBRE: %s, EDAD: %i\n", persona2.nombre, persona2.edad);
+    printf("NOMBRE: %s, EDAD: %i POBLACION: %s\n", persona1.nombre, persona1.edad, persona1.poblacion);
+    printf("NOMBRE: %s, EDAD: %i, POBLACION: %s\n", persona2.nombre, persona2.edad, persona2.poblacion);
 
     //Los nombres coinciden
     if(compararStrings(persona1.nombre, persona2.nombre)) printf("Los nombres coinciden\n");

@@ -1,4 +1,4 @@
-//COMMAND: compile ejercicio3.c && ejercicio 3
+//COMMAND: compile ejercicio1.c && ejercicio 3
 
 //Libraries
 #include <stdio.h>

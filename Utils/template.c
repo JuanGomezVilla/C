@@ -1,15 +1,18 @@
-//COMANDO: 
+//COMMAND: 
 
-//Librerías
+//Libraries
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-//Definiciones
+//METHODS DECLARATIONS
 
-//ESTRUCTURAS
+
+//STRUCTURES
 
 
 void main(int argc, char *argv[]){
     
 }
+
+//METHODS IMPLEMENTATIONS
